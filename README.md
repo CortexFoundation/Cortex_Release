@@ -2,7 +2,7 @@
 
 ## Software Package
 
-[Cortex Full Node and Miner](https://github.com/CortexFoundation/Cortex_Release/releases/download/doloris_beta/cortex-core.tar.gz)
+[Cortex Full Node and Miner](https://github.com/CortexFoundation/Cortex_Release/releases/download/dolores_beta/cortex-core.tar.gz)
 
 [Cortex Wallet](https://github.com/CortexFoundation/Cortex_Release/releases/download/dolores_beta/cortex-wallet.tar.gz)
 
