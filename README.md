@@ -11,3 +11,7 @@ https://github.com/CortexFoundation/Cortex_Release/releases/download/doloris_bet
 Cortex Improvement Proposals ([CIPs](CIPs/)) are standards for Cortex, describing model specifications, blockchain protocols, virtual machines, and ai smart contracts.
 
 [[CIP-1](CIPs/cip-1.md)] Synapse: Cortex Deterministic Deep Learning Inference Framework
+
+## Links
+
+[Fractional Units for Cortex](docs/units.md)
