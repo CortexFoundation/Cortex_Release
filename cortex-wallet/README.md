@@ -4,7 +4,7 @@
 
 Cortex Wallet 
 
-https://github.com/CortexFoundation/Cortex_Release/releases/download/dolores_beta/cortex-wallet.tar.gz
+[https://github.com/CortexFoundation/Cortex_Release/raw/master/cortex-wallet/wallet(chrome%20only).zip](https://github.com/CortexFoundation/Cortex_Release/raw/master/cortex-wallet/wallet(chrome%20only).zip)
 
 ## Cortex Wallet Usage
 
