@@ -51,7 +51,7 @@ Once the dependencies are installed, run
     
 ### Fullnode Executables
 
-    ./cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 3 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
+    ./cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
 
 # Appendix
 
