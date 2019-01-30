@@ -2,12 +2,29 @@
 
 Official golang implementation of the Cortex fullnode.
 
-## Clone the source (Need permission)
+## 1. Run cortex fullnode from source code.
+
+### Clone the source (Need permission)
 
     git clone git@github.com:CortexFoundation/CortexTheseus.git --branch wlt-cerebro
     cd CortexTheseus
 
-## Building the source
+### Install Golang 1.11
+
+    wget -q https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz
+    export PATH=$PATH:/usr/local/go/bin
+
+### Install CUDA 9.2 (With Nvidia Driver)
+
+    wget https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux
+    sudo sh cuda_9.2.148_396.37_linux.run
+
+### Install Nvidia Driver 
+    If your CUDA Driver version is not 396.26 or later
+    see appendix.
+
+### Building the source
 
 Building geth requires both a Go (version 1.7 or later), a C compiler, and CUDA 9.2 (CUDA Driver version 396.26 or later).
 You can install them using your favourite package manager.
@@ -15,15 +32,26 @@ Once the dependencies are installed, run
 
     make all
 
-## Fullnode Executables
+### Fullnode Executables
 
     ./build/bin/cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
 
-## Miner Executables
-    ./build/bin/cuda_miner -account 0xc3d7a1ef810983847510542edfd5bc5551a6321c -deviceids 0
+## 2. Run cortex fullnode from binary.
 
-More detailed:
-    ./build/bin/cuda_miner -account YOUR_ACCOUNT -deviceids YOUR_DEVICE_IDS("0,2,4,6") -pool_uri YOUR_POOL_URI(default "miner-cn.cortexlabs.ai:8009")
+### Get the binary file "/build/bin/cortex".
+
+### Install CUDA 9.2 (With Nvidia Driver)
+
+    wget https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux
+    sudo sh cuda_9.2.148_396.37_linux.run
+
+### Install Nvidia Driver 
+    If your CUDA Driver version is not 396.26 or later
+    see appendix.
+    
+### Fullnode Executables
+
+    ./cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
 
 # Appendix
 
@@ -46,9 +74,7 @@ or use a package manager you prefer. eg,
 ## Install Nvidia Driver on Ubuntu 16.04
 
     sudo apt-get remove --purge nvidia*
-
     sudo apt-get install build-essential pkg-config xserver-xorg-dev 
-
     sudo vim /etc/modprobe.d/blacklist-nouveau.conf
 
 blacklist-nouveau.conf:
