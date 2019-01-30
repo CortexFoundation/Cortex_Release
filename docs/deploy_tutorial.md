@@ -2,7 +2,7 @@
 
 Official golang implementation of the Cortex fullnode.
 
-## 1. Run cortex fullnode from source code.
+## 1. Run cortex fullnode from the source code.
 
 ### Clone the source (Need permission)
 
@@ -21,7 +21,7 @@ Official golang implementation of the Cortex fullnode.
     sudo sh cuda_9.2.148_396.37_linux.run
 
 ### Install Nvidia Driver 
-    If your CUDA Driver version is not 396.26 or later
+    If your CUDA Driver version is not 396.26 or later.
     see appendix.
 
 ### Building the source
@@ -36,7 +36,7 @@ Once the dependencies are installed, run
 
     ./build/bin/cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
 
-## 2. Run cortex fullnode from binary.
+## 2. Run cortex fullnode from the binary.
 
 ### Get the binary file "/build/bin/cortex".
 
@@ -46,7 +46,7 @@ Once the dependencies are installed, run
     sudo sh cuda_9.2.148_396.37_linux.run
 
 ### Install Nvidia Driver 
-    If your CUDA Driver version is not 396.26 or later
+    If your CUDA Driver version is not 396.26 or later.
     see appendix.
     
 ### Fullnode Executables
