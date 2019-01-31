@@ -2,59 +2,88 @@
 
 Official golang implementation of the Cortex fullnode.
 
-## 1. Run cortex fullnode from the source code.
+## 1. Requirements
 
-### Clone the source (Need permission)
+### 
+Building cortex requires a Go (version 1.7 or later), a C compiler, and a CUDA (version 9.2 or later).
 
-    git clone git@github.com:CortexFoundation/CortexTheseus.git --branch wlt-cerebro
-    cd CortexTheseus
+-----------
 
-### Install Golang 1.11
+### Install NVIDIA Driver
 
-    wget -q https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
-    sudo tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz
-    export PATH=$PATH:/usr/local/go/bin
+Download the driver first,
 
-### Install CUDA 9.2 (With Nvidia Driver)
+    wget http://us.download.nvidia.com/XFree86/Linux-x86_64/410.93/NVIDIA-Linux-x86_64-410.93.run
+    chmod +x NVIDIA-Linux-x86_64-410.93.run
 
-    wget https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux
-    sudo sh cuda_9.2.148_396.37_linux.run
+Remove old driver,
 
-### Install Nvidia Driver 
-    If your CUDA Driver version is not 396.26 or later.
-    see appendix.
+    sudo apt-get remove --purge nvidia*
+    sudo apt-get install build-essential freeglut3-dev libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev
+    sudo nano /etc/modprobe.d/blacklist-nouveau.conf
 
-### Building the source
+Paste the following content into the text editor and save it,
 
-Building geth requires both a Go (version 1.7 or later), a C compiler, and CUDA 9.2 (CUDA Driver version 396.26 or later).
-You can install them using your favourite package manager.
-Once the dependencies are installed, run
+    blacklist nouveau
+    options nouveau modeset=0
 
-    make all
+Press Ctrl + Alt + F1 to enter tty1 console,
+ 
+    sudo update-initramfs -u
+    sudo service lightdm stop
+    sudo ./NVIDIA-Linux-x86_64-410.93.run –no-opengl-files
 
-### Fullnode Executables
+Then,
 
-    ./build/bin/cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
+    sudo service lightdm start
 
-## 2. Run cortex fullnode from the binary.
+Press Ctrl + Alt + F7 to go back tty7 interface.
 
-### Get the binary file "/build/bin/cortex".
+----------
 
-### Install CUDA 9.2 (With Nvidia Driver)
 
-    wget https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux
-    sudo sh cuda_9.2.148_396.37_linux.run
+### Install NVIDIA Driver via PPA repository
 
-### Install Nvidia Driver 
-    If your CUDA Driver version is not 396.26 or later.
-    see appendix.
+    sudo apt-get remove --purge nvidia*
+    sudo apt-get install build-essential freeglut3-dev libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev
+    sudo nano /etc/modprobe.d/blacklist-nouveau.conf
     
-### Fullnode Executables
 
-    ./cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
+Paste the following content into the text editor and save it,
 
-# Appendix
+    blacklist nouveau
+    options nouveau modeset=0
 
+Install NVIDIA Driver via PPA repository,
+
+    sudo add-apt-repository ppa:graphics-drivers/ppa
+    sudo apt-get update
+
+Press Ctrl + Alt + F1 to enter tty1 console,
+ 
+    sudo update-initramfs -u
+    sudo service lightdm stop
+
+    sudo apt-get install nvidia-410
+    sudo apt-get install mesa-common-dev
+    sudo apt-get install freeglut3-dev
+
+Then,
+
+    sudo service lightdm start
+
+Press Ctrl + Alt + F7 to go back tty7 interface.
+
+----------
+
+### Install CUDA 9.2 (Without NVIDIA Driver)
+
+    wget https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux
+    mv cuda_9.2.148_396.37_linux cuda_9.2.148_396.37_linux.run
+    sudo sh cuda_9.2.148_396.37_linux.run
+    (IMPORTANT: don't install driver here!!!)
+
+----
 
 ## Install Go 1.10 or 1.11
 
@@ -68,36 +97,22 @@ or use a package manager you prefer. eg,
 
     sudo apt install golang-1.10
 
+-----
 
+### Building the source
 
+Once the dependencies are installed, run
 
-## Install Nvidia Driver on Ubuntu 16.04
+    make -j cortex
+    
+The compiled binary files are located in the ./build/bin,
+    
+    ./build/bin/cortex
+    
+----
 
-    sudo apt-get remove --purge nvidia*
-    sudo apt-get install build-essential pkg-config xserver-xorg-dev 
-    sudo vim /etc/modprobe.d/blacklist-nouveau.conf
+## 2. Run the fullnode
 
-blacklist-nouveau.conf:
+### Fullnode Executables
 
-    blacklist nouveau
-    options nouveau modeset=0
-
-Press Ctrl + Alt + F1 to enter tty1 console,
- 
-    sudo update-initramfs -u
-    sudo service lightdm stop
-    sudo sh ./NVIDIA*.run
-
-You can also install NVIDIA Driver via PPA repository,
-
-    sudo add-apt-repository ppa:graphics-drivers/ppa
-    sudo apt-get update
-    sudo apt-get install nvidia-396
-    sudo apt-get install mesa-common-dev
-    sudo apt-get install freeglut3-dev
-
-Then,
-
-    sudo service lightdm start
-
-Press Ctrl + Alt + F7 to go back tty7 interface.
+    ./cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
