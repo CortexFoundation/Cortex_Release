@@ -32,6 +32,7 @@ Press Ctrl + Alt + F1 to enter tty1 console,
     sudo update-initramfs -u
     sudo service lightdm stop
     sudo ./NVIDIA-Linux-x86_64-410.93.run –no-opengl-files
+    (do not apply xorg config here!!!!)
 
 Then,
 
@@ -113,6 +114,84 @@ The compiled binary files are located in the ./build/bin,
 
 ## 2. Run the fullnode
 
-### Fullnode Executables
+### Download the executable file directly
+
+    sudo mkdir -p /serving/cortex-core/bin
+    cd /serving/cortex-core/bin
+    sudo chmod 777 .
+
+Ubuntu 16.04, CUDA 9.0
+
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-16.04-cuda-9.0
+    mv cortex-ubuntu-16.04-cuda-9.0 cortex
+
+Ubuntu 16.04, CUDA 9.2
+
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-16.04-cuda-9.2
+    mv cortex-ubuntu-16.04-cuda-9.2 cortex
+
+Ubuntu 16.04, CUDA 10.0
+
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-16.04-cuda-10.0
+    mv cortex-ubuntu-16.04-cuda-10.0 cortex
+
+Ubuntu 18.04, CUDA 9.2
+
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-18.04-cuda-9.2
+    mv cortex-ubuntu-18.04-cuda-9.2 cortex
+
+Ubuntu 18.04, CUDA 10.0
+
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-18.04-cuda-10.0
+    mv cortex-ubuntu-18.04-cuda-10.0 cortex
+
+----
+
+
+### Fullnode executables directly
 
     ./cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
+
+### Fullnode executables supervisor config
+
+    [program:cortexnode]
+    directory=/serving/cortex-core/bin
+    command=./cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
+    autostart=true 
+    autorestart=true
+    stderr_logfile=/tmp/cortex_fullnode_stderr.log 
+    stdout_logfile=/tmp/cortex_fullnode_stdout.log 
+
+----
+### Fullnode parameters
+
+#### Command
+
+use the parameter directly.
+
+|parameter| description |
+----|----
+|help|Print Cortex binary help statements.|
+|init|Init Cortex node from a genesis configuration file|
+
+#### Options
+
+use "--" prefix with the parameter.
+
+|       parameter     | description | 
+--------------------- | -------------
+| cerebro | Setting --cerebro flag to enable connection to Cerebro testnet.
+| | Notice: When this flag is enabled, datadir will be located at $HOME/.cortex/cerebro/ by default, which different from $HOME/.cortex/ in the previous version, be noticed to set datadir if restart from the previous version with default directory.|
+| storage | [Necessary] |
+| |Setting this flag enables synchronization of Cortex storage layer, a standard fullnode with inference engine must set this.|
+| storage.dir|Set the directory of Cortex storage layer. By default, $HOME/.cortex/storage the directory is the storage dir.|
+|storage.tracker|To alleviate the latency of finding the torrent file in P2P network, you can set torrent tracker manually. By default, a pre-defined tracker is available.|
+|datadir|Set Cortex binary data directory. By default, $HOME/.cortex/ is data directory.|
+|networkid|Set Cortex blockchain network id, Cerebro testnet is 42 by default.|
+|port|Set Cortex binary listening port.|
+|bootnodes| [Options]|
+||Set bootnodes of Cortex blockchain.|
+|verbosity|Set logging level to print, by default is 3, range in [1, 5], which represent Error, Warn, Info, Debug, Trace.|
+
+
+
