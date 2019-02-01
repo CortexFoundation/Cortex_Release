@@ -75,9 +75,28 @@ Then,
 
 Press Ctrl + Alt + F7 to go back tty7 interface.
 
-----------
+### How to Install Latest Nvidia Drivers on Ubuntu 16.04
 
-### Install CUDA 9.2 (Without NVIDIA Driver)
+[Click Here](https://rajat-osgyan.blogspot.com/2016/04/how-to-install-latest-nvidia-drivers-on.html)
+
+### Make sure you have installed NVIDIA driver successfully
+
+Run
+
+    nvidia-smi
+
+and check the driver status.
+
+----
+
+### Install CUDA 10.0 (Without NVIDIA Driver)
+
+    wget https://developer.nvidia.com/compute/cuda/10.0/Prod/ local_installers/cuda_10.0.130_410.48_linux
+    mv cuda_10.0.130_410.48_linux cuda_10.0.130_410.48_linux.run
+    sudo sh cuda_10.0.130_410.48_linux.run
+    (IMPORTANT: don't install driver here!!!)
+
+### Or install CUDA 9.2 (Without NVIDIA Driver)
 
     wget https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux
     mv cuda_9.2.148_396.37_linux cuda_9.2.148_396.37_linux.run
@@ -102,8 +121,21 @@ or use a package manager you prefer. eg,
 
 ### Building the source
 
+Clone the source (Need permission)
+
+    git clone git@github.com:CortexFoundation/CortexTheseus.git --branch wlt-cerebro
+    (with git accessable key)
+    git clone http://github.com/CortexFoundation/CortexTheseus --branch wlt-cerebro
+    (with git accessable account)
+
+    cd CortexTheseus
+
 Once the dependencies are installed, run
 
+    cd infernet
+    make clean
+    cd ..
+    make clean
     make -j cortex
     
 The compiled binary files are located in the ./build/bin,
