@@ -79,6 +79,16 @@ Press Ctrl + Alt + F7 to go back tty7 interface.
 
 [Click Here](https://rajat-osgyan.blogspot.com/2016/04/how-to-install-latest-nvidia-drivers-on.html)
 
+### How to solve the login loop problem
+
+[csdn answer 1](https://blog.csdn.net/zhwisdom0427/article/details/73662433)
+
+[csdn answer 2](https://blog.csdn.net/gaowu959/article/details/79596724)
+
+[csdn answer 3](https://blog.csdn.net/QLULIBIN/article/details/79568916)
+
+[Login loop after upgrade to 16.04](https://askubuntu.com/questions/760492/login-loop-after-upgrade-to-16-04)
+
 ### Make sure you have installed NVIDIA driver successfully
 
 Run
@@ -96,7 +106,7 @@ and check the driver status.
     sudo sh cuda_10.0.130_410.48_linux.run
     (IMPORTANT: don't install driver here!!!)
 
-### Or install CUDA 9.2 (Without NVIDIA Driver)
+### OR Install CUDA 9.2 (Without NVIDIA Driver)
 
     wget https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux
     mv cuda_9.2.148_396.37_linux cuda_9.2.148_396.37_linux.run
@@ -111,11 +121,17 @@ You can install go-1.11 directly,
 
     wget -q https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz
-    export PATH=$PATH:/usr/local/go/bin
+    echo 'export PATH="$PATH:/usr/local/go/bin"' >> ~/.bashrc
+    source ~/.bashrc
 
 or use a package manager you prefer. eg,
 
     sudo apt install golang-1.10
+
+Check your go version here,
+
+    go version
+
 
 -----
 
@@ -224,6 +240,4 @@ use "--" prefix with the parameter.
 |bootnodes| [Options]|
 ||Set bootnodes of Cortex blockchain.|
 |verbosity|Set logging level to print, by default is 3, range in [1, 5], which represent Error, Warn, Info, Debug, Trace.|
-
-
 
