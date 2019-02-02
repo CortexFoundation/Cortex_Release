@@ -211,7 +211,16 @@ Ubuntu 18.04, CUDA 10.0
 #### Create bash script
 
     rm /serving/cortex-core/bin/cortex.sh
-    echo "/serving/cortex-core/bin/cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1" >> /serving/cortex-core/bin/cortex.sh
+    sudo nano /serving/cortex-core/bin/cortex.sh
+
+Create /serving/cortex-core/bin/cortex.sh
+
+    #!/bin/bash
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    /serving/cortex-core/bin/cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
+
+Make the script executable,
+
     chmod +x /serving/cortex-core/bin/cortex.sh
 
 #### config
@@ -219,11 +228,11 @@ Ubuntu 18.04, CUDA 10.0
     [program:cortexnode]
     directory=/serving/cortex-core/bin/
     command=bash /serving/cortex-core/bin/cortex.sh
-    autostart=true 
+    autostart=true
     autorestart=true
     startsecs=5
-    stderr_logfile=/tmp/cortex_fullnode_stderr.log 
-    stdout_logfile=/tmp/cortex_fullnode_stdout.log 
+    stderr_logfile=/tmp/cortex_fullnode_stderr.log
+    stdout_logfile=/tmp/cortex_fullnode_stdout.log
 
 #### check running status
 
