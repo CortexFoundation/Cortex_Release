@@ -104,6 +104,7 @@ and check the driver status.
     wget https://developer.nvidia.com/compute/cuda/10.0/Prod/ local_installers/cuda_10.0.130_410.48_linux
     mv cuda_10.0.130_410.48_linux cuda_10.0.130_410.48_linux.run
     sudo sh cuda_10.0.130_410.48_linux.run
+    sudo ldconfig /usr/local/cuda/lib64
     (IMPORTANT: don't install driver here!!!)
 
 ### OR Install CUDA 9.2 (Without NVIDIA Driver)
@@ -111,6 +112,7 @@ and check the driver status.
     wget https://developer.nvidia.com/compute/cuda/9.2/Prod2/local_installers/cuda_9.2.148_396.37_linux
     mv cuda_9.2.148_396.37_linux cuda_9.2.148_396.37_linux.run
     sudo sh cuda_9.2.148_396.37_linux.run
+    sudo ldconfig /usr/local/cuda/lib64
     (IMPORTANT: don't install driver here!!!)
 
 ----
@@ -119,7 +121,7 @@ and check the driver status.
 
 You can install go-1.11 directly,
 
-    wget -q https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
+    wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz
     echo 'export PATH="$PATH:/usr/local/go/bin"' >> ~/.bashrc
     source ~/.bashrc
@@ -148,11 +150,15 @@ Clone the source (Need permission)
 
 Once the dependencies are installed, run
 
-    cd infernet
-    make clean
-    cd ..
-    make clean
+    cd infernet && make clean
+    cd .. && make clean
     make -j cortex
+
+Save the executable file,
+
+    sudo mkdir -p /serving/cortex-core/bin
+    sudo chmod 777 /serving/cortex-core/bin
+    cp build/bin/cortex /serving/cortex-core/bin/cortex
     
 The compiled binary files are located in the ./build/bin,
     
@@ -200,15 +206,28 @@ Ubuntu 18.04, CUDA 10.0
 
     ./cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
 
-### Fullnode executables supervisor config
+### Fullnode executables via supervisor
+
+#### Create bash script
+
+    rm /serving/cortex-core/bin/cortex.sh
+    echo "/serving/cortex-core/bin/cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1" >> /serving/cortex-core/bin/cortex.sh
+    chmod +x /serving/cortex-core/bin/cortex.sh
+
+#### config
 
     [program:cortexnode]
-    directory=/serving/cortex-core/bin
-    command=./cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
+    directory=/serving/cortex-core/bin/
+    command=bash /serving/cortex-core/bin/cortex.sh
     autostart=true 
     autorestart=true
+    startsecs=5
     stderr_logfile=/tmp/cortex_fullnode_stderr.log 
     stdout_logfile=/tmp/cortex_fullnode_stdout.log 
+
+#### check running status
+
+    sudo supervisorctl tail cortexnode stdout
 
 ----
 ### Fullnode parameters
