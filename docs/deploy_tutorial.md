@@ -141,9 +141,9 @@ Check your go version here,
 
 Clone the source (Need permission)
 
-    git clone git@github.com:CortexFoundation/CortexTheseus.git --branch wlt-cerebro
+    git clone git@github.com:CortexFoundation/CortexTheseus.git --branch dev-cerebro
     (with git accessable key)
-    git clone http://github.com/CortexFoundation/CortexTheseus --branch wlt-cerebro
+    git clone http://github.com/CortexFoundation/CortexTheseus --branch dev-cerebro
     (with git accessable account)
 
     cd CortexTheseus
@@ -176,28 +176,28 @@ The compiled binary files are located in the ./build/bin,
 
 Ubuntu 16.04, CUDA 9.0
 
-    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-16.04-cuda-9.0
-    mv cortex-ubuntu-16.04-cuda-9.0 cortex
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-Ubuntu-16.04-cuda-9.0
+    mv cortex-Ubuntu-16.04-cuda-9.0 cortex
 
 Ubuntu 16.04, CUDA 9.2
 
-    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-16.04-cuda-9.2
-    mv cortex-ubuntu-16.04-cuda-9.2 cortex
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-Ubuntu-16.04-cuda-9.2
+    mv cortex-Ubuntu-16.04-cuda-9.2 cortex
 
 Ubuntu 16.04, CUDA 10.0
 
-    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-16.04-cuda-10.0
-    mv cortex-ubuntu-16.04-cuda-10.0 cortex
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-Ubuntu-16.04-cuda-10.0
+    mv cortex-Ubuntu-16.04-cuda-10.0 cortex
 
 Ubuntu 18.04, CUDA 9.2
 
-    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-18.04-cuda-9.2
-    mv cortex-ubuntu-18.04-cuda-9.2 cortex
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-Ubuntu-18.04-cuda-9.2
+    mv cortex-Ubuntu-18.04-cuda-9.2 cortex
 
 Ubuntu 18.04, CUDA 10.0
 
-    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-ubuntu-18.04-cuda-10.0
-    mv cortex-ubuntu-18.04-cuda-10.0 cortex
+    wget https://raw.githubusercontent.com/CortexFoundation/Cortex_Release/master/cortex-core/bin/cortex-Ubuntu-18.04-cuda-10.0
+    mv cortex-Ubuntu-18.04-cuda-10.0 cortex
 
 ----
 
