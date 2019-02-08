@@ -114,6 +114,12 @@ and check the driver status.
     sudo sh cuda_9.2.148_396.37_linux.run
     sudo ldconfig /usr/local/cuda/lib64
     (IMPORTANT: don't install driver here!!!)
+    
+### Add following to the end of ~/.bashrc and run "source ~/.bashrc"
+
+    export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
 
 ----
 
@@ -216,12 +222,13 @@ Ubuntu 18.04, CUDA 10.0
 Create /serving/cortex-core/bin/cortex.sh
 
     #!/bin/bash
+    export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
     /serving/cortex-core/bin/cortex --port 37566 --rpc --rpccorsdomain '*' --rpcport 30089 --rpcaddr 127.0.0.1 --rpcapi web3,eth,ctx,miner,net,txpool --verbosity 4 --storage --cerebro --gcmode archive --rpcaddr 127.0.0.1
 
 Make the script executable,
 
-    chmod +x /serving/cortex-core/bin/cortex.sh
+    sudo chmod +x /serving/cortex-core/bin/cortex.sh
 
 #### config
 
