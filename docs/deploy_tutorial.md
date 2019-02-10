@@ -178,7 +178,7 @@ The compiled binary files are located in the ./build/bin,
 
     sudo mkdir -p /serving/cortex-core/bin
     cd /serving/cortex-core/bin
-    sudo chmod 777 .
+    sudo chmod 777 /serving/cortex-core/bin
 
 Ubuntu 16.04, CUDA 9.0
 
