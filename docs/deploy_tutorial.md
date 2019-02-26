@@ -174,6 +174,12 @@ The compiled binary files are located in the ./build/bin,
 
 ## 2. Run the fullnode
 
+### Deploy with script
+
+    wget https://raw.githubusercontent.com/lizhencortex/cortex-deploy/master/deploy.sh
+    chmod +x deploy.sh
+    sudo ./deploy.sh
+
 ### Download the executable file directly
 
     sudo mkdir -p /serving/cortex-core/bin
