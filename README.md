@@ -4,7 +4,7 @@
 
 [Cortex Full Node and Miner](https://github.com/CortexFoundation/Cortex_Release/releases/download/dolores_beta/cortex-core.tar.gz)
 
-[Cortex Wallet](https://github.com/CortexFoundation/Cortex_Release/raw/master/cortex-wallet/wallet(chrome%20only).zip)
+[Cortex Wallet](https://github.com/CortexFoundation/Cortex_Release/blob/master/cortex-wallet/CortexWallet.zip?raw=true)
 
 
 
