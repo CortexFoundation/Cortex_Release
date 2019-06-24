@@ -1,5 +1,5 @@
 # Dolores
-It is Cortex's last Testnet before Mainnet (Dolores).
+It is Cortex's last Testnet before Mainnet.
 ## Software Package
 
 Cortex Miner
