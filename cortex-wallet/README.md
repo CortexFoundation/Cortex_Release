@@ -4,7 +4,7 @@
 
 Cortex Wallet 
 
-[https://github.com/CortexFoundation/Cortex_Release/raw/master/cortex-wallet/wallet(chrome%20only).zip](https://github.com/CortexFoundation/Cortex_Release/raw/master/cortex-wallet/wallet(chrome%20only).zip)
+[https://github.com/CortexFoundation/Cortex_Release/raw/master/cortex-wallet/wallet(chrome%20only).zip](https://github.com/CortexFoundation/Cortex_Release/blob/master/cortex-wallet/CortexWallet.zip)
 
 ## Cortex Wallet Usage
 
