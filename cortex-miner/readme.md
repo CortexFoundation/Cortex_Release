@@ -1,7 +1,7 @@
 Need:
-CUDA Version 9.2+
-NVIDIA Driver Version: 396.37+
-GPU Memory > 10.7G, such as: 1080ti, 2080ti, titan V, titan RTX
+- CUDA Version 9.2+
+- NVIDIA Driver Version: 396.37+
+- Recommend: 1080ti, 2080ti, titan V, titan RTX
 
 Step:
 1. tar -zxvf cortex_miner.tar.gz
