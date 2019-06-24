@@ -1,6 +1,6 @@
 # Dolores
 It is Cortex's last Testnet before Mainnet(Dolores).
--Software Package
+##Software Package
 
 Cortex Miner
 https://github.com/CortexFoundation/Cortex_Release/tree/master/cortex-miner
@@ -9,7 +9,7 @@ Cortex Wallet
 https://github.com/CortexFoundation/Cortex_Release/tree/master/cortex-wallet
 
 
--Links
+##Links
 
 Verify
 https://github.com/CortexFoundation/Cortex_Release/blob/master/docs/verify.c
