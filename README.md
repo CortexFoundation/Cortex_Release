@@ -26,6 +26,6 @@ http://www.cortexmint.com
 
 Mining Pool Interface:
 
-cuckoo.cortexmint.ai:8008 for everyone
+cuckoo.cortexmint.com:8008 for everyone
 
 Thank you cortexmint
