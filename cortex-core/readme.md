@@ -43,7 +43,9 @@ Set logging level to print, by default is 3, range in [1, 5], which represent Er
 And then, run any command to start full node `cortex`:
 
 ```Bash
-1. ./bin/cortex 
-2. ./bin/cortex --storage.dir ~/data/ctxc --verbosity 4
-3. ./bin/cortex --datadir ~/.cortex --storage.dir ~/.cortex/storage --verbosity 4
+1. cd cortex
+2. export LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH
+3. ./bin/cortex 
+  - ./bin/cortex --storage.dir ~/data/ctxc --verbosity 4
+  - ./bin/cortex --datadir ~/.cortex --storage.dir ~/.cortex/storage --verbosity 4
 ```
