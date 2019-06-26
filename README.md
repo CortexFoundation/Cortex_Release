@@ -1,5 +1,6 @@
-# Dolores
-It is Cortex's last Testnet before Mainnet.
+# Arnold
+It is Cortex's Mainnet
+
 ## Software Package
 
 Cortex Miner

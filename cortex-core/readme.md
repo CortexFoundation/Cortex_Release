@@ -45,7 +45,7 @@ And then, run any command to start full node `cortex`:
 ```Bash
 1. cd cortex
 2. export LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH
-3. ./bin/cortex 
-4. ./bin/cortex --storage.dir ~/data/ctxc --verbosity 4
-5. ./bin/cortex --datadir ~/.cortex --storage.dir ~/.cortex/storage --verbosity 4
+3. ./cortex 
+4. ./cortex --storage.dir ~/data/ctxc --verbosity 4
+5. ./cortex --datadir ~/.cortex --storage.dir ~/.cortex/storage --verbosity 4
 ```

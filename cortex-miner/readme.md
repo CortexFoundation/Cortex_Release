@@ -26,3 +26,6 @@ account='0x0000000000000000000000000'
 ```
 4. chmod +x start.sh
 5. ./start.sh
+
+### pool address
+Recommend : cuckoo.cortexmint.ai:8008
