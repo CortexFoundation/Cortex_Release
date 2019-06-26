@@ -12,10 +12,6 @@ Cortex node is developed in Ubuntu 16.04 x64 + CUDA 9.2 environment, with CUDA C
 
 Print Cortex binary help statements.
 
-#### init
-
-Init Cortex node from a genesis configuration file
-
 ### Options
 
 #### --storage [Optional]
@@ -49,5 +45,5 @@ And then, run any command to start full node `cortex`:
 ```Bash
 1. ./bin/cortex 
 2. ./bin/cortex --storage.dir ~/data/ctxc --verbosity 4
-3. ./bin/cortex --datadir ~/.cortex --storage.dir ~/.cortex/cerebro/storage --verbosity 4
+3. ./bin/cortex --datadir ~/.cortex --storage.dir ~/.cortex/storage --verbosity 4
 ```
