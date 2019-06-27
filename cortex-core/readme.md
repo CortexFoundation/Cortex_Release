@@ -3,6 +3,13 @@
 ## System Requirements
 
 Cortex node is developed in Ubuntu 16.04 x64 + CUDA 9.2 + NVIDIA Driver 396.37 environment, with CUDA Compute capability >= 6.1. Latest Ubuntu distributions are also compatible, but not fully tested.
+Recommend:
+- cmake 1.10.0+
+- go 1.10.0+
+- gcc/g++ 5.4+
+- cuda 9.2+
+- nvidia driver 396.37+
+- ubuntu 16.04+
 
 ## Cortex Full Node
 
