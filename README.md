@@ -1,5 +1,6 @@
-# Dolores
-It is Cortex's last Testnet before Mainnet.
+# Arnold
+It is Cortex's Mainnet
+
 ## Software Package
 
 Cortex Miner
@@ -25,6 +26,6 @@ http://www.cortexmint.com
 
 Mining Pool Interface:
 
-cuckoo.cortexmint.ai:8008 for everyone
+cuckoo.cortexmint.com:8008 for everyone
 
 Thank you cortexmint

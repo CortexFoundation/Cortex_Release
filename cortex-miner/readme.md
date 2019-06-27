@@ -1,6 +1,7 @@
 Need:
 - CUDA Version 9.2+
 - NVIDIA Driver Version: 396.37+
+- Below is the recommended minimum requirements for the official miner. Third party miners may be available after the Mainnet release which might be optimized to use less memory.
 - Recommend: 1080ti, 2080ti, titan V, titan RTX
 
 Step:
@@ -26,3 +27,7 @@ account='0x0000000000000000000000000'
 ```
 4. chmod +x start.sh
 5. ./start.sh
+
+### pool address
+- Recommend : cuckoo.cortexmint.com:8008
+- The Pool Link : www.cortexmint.com/
