@@ -1,11 +1,11 @@
-Need:
+### Need:
 - CUDA Version 9.2+
 - NVIDIA Driver Version: 396.37+
 - GPU Memory > 10.7G
   1. Below is the recommended minimum requirements for the official miner. Third party miners may be available after the Mainnet release which might be optimized to use less memory.
   2. Recommend: 1080ti, 2080ti, titan V, titan RTX
 
-Step:
+### Step:
 1. download [cortex_miner.tar.gz](https://github.com/CortexFoundation/Cortex_Release/raw/master/cortex-miner/cortex_miner.tar.gz)
 2. tar -zxvf cortex_miner.tar.gz
 3. cd cortex_miner
