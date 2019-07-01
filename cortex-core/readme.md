@@ -8,6 +8,10 @@ Recommend:
 - go 1.10.0+
 - gcc/g++ 5.4+
 - cuda 9.2+
+```
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:/usr/local/cuda/lib64/stubs:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/usr/local/cuda/lib64/:/usr/local/cuda/lib64/stubs:$LIBRARY_PATH
+```
 - nvidia driver 396.37+
 - ubuntu 16.04+
 
@@ -52,7 +56,7 @@ And then, run any command to start full node `cortex`:
 ```Bash
 1. cd cortex
 2. export LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH
-3. ./cortex 
-4. ./cortex --storage.dir ~/data/ctxc --verbosity 4
-5. ./cortex --datadir ~/.cortex --storage.dir ~/.cortex/storage --verbosity 4
+3. ./cortex —syncmode fast
+4. ./cortex --storage.dir ~/data/ctxc --verbosity 4 —syncmode fast
+5. ./cortex --datadir ~/.cortex --storage.dir ~/.cortex/storage --verbosity 4 —syncmode fast
 ```
