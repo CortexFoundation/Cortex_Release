@@ -60,6 +60,10 @@ Set Cortex binary listening port.
 #### --verbosity
 
 Set logging level to print, by default is 3, range in [1, 5], which represent Error, Warn, Info, Debug, Trace.
+### Compile Source Code
+1. git clone https://github.com/CortexFoundation/CortexTheseus.git
+2. cd CortexTheseus
+3. make cortex_cpu or make cortex (cpu and gpu)
 
 ### Running Bash
 
@@ -72,3 +76,5 @@ And then, run any command to start full node `cortex`:
 4. ./cortex --storage.dir ~/data/ctxc --verbosity 4 —syncmode fast
 5. ./cortex --datadir ~/.cortex --storage.dir ~/.cortex/storage --verbosity 4 —syncmode fast
 ```
+
+
