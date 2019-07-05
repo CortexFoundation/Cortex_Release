@@ -54,10 +54,8 @@ export LIBRARY_PATH=/usr/local/cuda/lib64/:/usr/local/cuda/lib64/stubs:$LIBRARY_
 
 ## Cortex Full Node
 
-### Compile Source Code
-1. git clone https://github.com/CortexFoundation/CortexTheseus.git
-2. cd CortexTheseus
-3. make cortex_cpu (cpu) or make cortex (gpu)
+### Compile Source Code And Run
+see https://github.com/CortexFoundation/CortexTheseus/blob/dev/README.md
 
 ### Running Bash
 
