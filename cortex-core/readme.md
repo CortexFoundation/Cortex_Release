@@ -32,6 +32,16 @@ export LIBRARY_PATH=/usr/local/cuda/lib64/:/usr/local/cuda/lib64/stubs:$LIBRARY_
 ### centos
 Recommend:
 - cmake 3.11.0+
+```
+yum install -y gcc gcc-c++ make automake 
+yum install -y wget
+wget https://cmake.org/files/v3.12/cmake-3.12.0-rc1.tar.gz
+tar -zxvf cmake-3.12.0-rc1.tar.gz
+cd cmake-3.12.0-rc1
+./bootstrap
+gmake
+gmake install
+```
 - go 1.10.0+
 - gcc/g++ 5.4+
 - cuda 10.1+ (if u have gpu)
