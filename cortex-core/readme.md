@@ -7,7 +7,7 @@ Recommend:
 - cmake 1.10.0+
 - go 1.10.0+
 - gcc/g++ 5.4+
-- cuda 9.2+
+- cuda 9.2+ (if u have gpu)
 ```
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:/usr/local/cuda/lib64/stubs:$LD_LIBRARY_PATH
 export LIBRARY_PATH=/usr/local/cuda/lib64/:/usr/local/cuda/lib64/stubs:$LIBRARY_PATH
@@ -19,7 +19,7 @@ Recommend:
 - cmake 1.10.0+
 - go 1.10.0+
 - gcc/g++ 5.4+
-- cuda 10.1+
+- cuda 10.1+ (if u have gpu)
 ```
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:/usr/local/cuda/lib64/stubs:$LD_LIBRARY_PATH
 export LIBRARY_PATH=/usr/local/cuda/lib64/:/usr/local/cuda/lib64/stubs:$LIBRARY_PATH
