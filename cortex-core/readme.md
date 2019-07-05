@@ -44,37 +44,6 @@ export LIBRARY_PATH=/usr/local/cuda/lib64/:/usr/local/cuda/lib64/stubs:$LIBRARY_
 
 ## Cortex Full Node
 
-### Command
-
-#### help
-
-Print Cortex binary help statements.
-
-### Options
-
-#### --storage [Optional]
-
-Setting this flag enables synchronization of Cortex storage layer, a standard fullnode with inference engine must set this.
-
-**--storage.dir**
-
-Set the directory of Cortex storage layer. By default, `$HOME/.cortex/storage` the directory is the storage dir.
-
-#### --datadir
-
-Set Cortex binary data directory. By default, `$HOME/.cortex/` is data directory.
-
-#### --networkid
-
-Set Cortex blockchain network id, Cortex Mainnet Arnold use 21 by default.
-
-#### --port
-
-Set Cortex binary listening port.
-
-#### --verbosity
-
-Set logging level to print, by default is 3, range in [1, 5], which represent Error, Warn, Info, Debug, Trace.
 ### Compile Source Code
 1. git clone https://github.com/CortexFoundation/CortexTheseus.git
 2. cd CortexTheseus
