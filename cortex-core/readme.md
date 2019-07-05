@@ -63,7 +63,7 @@ Set logging level to print, by default is 3, range in [1, 5], which represent Er
 ### Compile Source Code
 1. git clone https://github.com/CortexFoundation/CortexTheseus.git
 2. cd CortexTheseus
-3. make cortex_cpu or make cortex (cpu and gpu)
+3. make cortex_cpu (cpu) or make cortex (gpu)
 
 ### Running Bash
 
