@@ -23,6 +23,7 @@ https://cerebro-cn.cortexlabs.ai/
 
 Mining Pool
 http://www.cortexmint.com
+http://ctxcpool.com
 
 Mining Pool Interface:
 
