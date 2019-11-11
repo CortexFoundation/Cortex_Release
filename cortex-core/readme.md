@@ -11,10 +11,10 @@ tar zxvf cmake-3.11.0-rc4-Linux-x86_64.tar.gz
 sudo mv cmake-3.11.0-rc4-Linux-x86_64  /opt/cmake-3.11
 sudo ln -sf /opt/cmake-3.11/bin/*  /usr/bin/
  ```
-- go 1.10.0+
+- go 1.13.4+
 ```
-wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz
+wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
 echo 'export PATH="$PATH:/usr/local/go/bin"' >> ~/.bashrc
 source ~/.bashrc
 ```
@@ -42,7 +42,7 @@ cd cmake-3.12.0-rc1
 gmake
 gmake install
 ```
-- go 1.10.0+
+- go 1.13.4+
 - gcc/g++ 5.4+
 - cuda 10.1+ (if u have gpu)
 ```
