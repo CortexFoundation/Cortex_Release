@@ -33,4 +33,4 @@ Mining Pool Interface:
 
 cuckoo.cortexmint.com:8008 for everyone
 
-Thank you cortexmint
+Thank you cortexmint, ctxcpool, frostypool.
