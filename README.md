@@ -6,6 +6,9 @@ It is Cortex's Mainnet
 Cortex Miner
 https://github.com/CortexFoundation/Cortex_Release/tree/master/cortex-miner
 
+Gminer
+https://github.com/develsoftware/GMinerRelease
+
 Cortex Wallet
 https://github.com/CortexFoundation/Cortex_Release/tree/master/cortex-wallet
 
