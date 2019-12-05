@@ -3,6 +3,9 @@ It is Cortex's Mainnet
 
 ## Software Package
 
+Fullnode
+https://github.com/CortexFoundation/CortexTheseus/releases
+
 Cortex Miner
 https://github.com/CortexFoundation/Cortex_Release/tree/master/cortex-miner
 
