@@ -10,7 +10,7 @@ Cortex Miner
 https://github.com/CortexFoundation/Cortex_Release/tree/master/cortex-miner
 
 Gminer
-https://github.com/develsoftware/GMinerRelease
+https://github.com/develsoftware/GMinerRelease/releases
 
 Cortex Wallet
 https://github.com/CortexFoundation/Cortex_Release/tree/master/cortex-wallet
