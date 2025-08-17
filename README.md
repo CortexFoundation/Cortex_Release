@@ -29,6 +29,8 @@ https://cerebro-cn.cortexlabs.ai/
 
 Mining Pool
 
+https://miningpoolstats.stream/cortex
+
 http://www.cortexmint.com
 
 http://ctxcpool.com
@@ -40,3 +42,4 @@ Mining Pool Interface:
 cuckoo.cortexmint.com:8008 for everyone
 
 Thank you cortexmint, ctxcpool, frostypool.
+
